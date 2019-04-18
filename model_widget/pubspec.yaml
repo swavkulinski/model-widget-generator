@@ -1,0 +1,11 @@
+name: model_widget
+version: 0.0.1
+author: Swav Kulinski<swav.kulinski@gmail.com>
+repository: 
+environment: 
+  sdk: '>=2.0.0 <3.0.0'
+dependencies: 
+dev_dependencies:
+  test: any
+
+  

@@ -1,0 +1,55 @@
+name: example
+description: A new Flutter project.
+version: 1.0.0+1
+environment:
+  sdk: ">=2.1.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  model_widget:
+    path: ../model_widget
+  
+  cupertino_icons: any
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  build_runner: any
+  model_widget_generator:
+    path: ../model_widget_generator/
+
+flutter:
+  
+  uses-material-design: true
+
+  
+  
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
