@@ -33,7 +33,7 @@ class ModelWidgetGenerator extends GeneratorForAnnotation<ModelWidget> {
     sourceBuilder += "Widget build(BuildContext context) => Column(\n";
     sourceBuilder += "children:<Widget>[";
     String textWidgets = "";
-    visitor.fields.forEach((name,type)=> textWidgets += "Text(\"$name \$name\"),");
+    visitor.fields.forEach((name,type)=> textWidgets += "Text(\"$name \$$name\"),");
     sourceBuilder += "$textWidgets\n";
     sourceBuilder += "]";
     sourceBuilder += ");\n";
