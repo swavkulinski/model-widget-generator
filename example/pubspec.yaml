@@ -10,12 +10,12 @@ dependencies:
   model_widget:
     path: ../model_widget
   
-  cupertino_icons: any
+  cupertino_icons: "0.1.2"
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  build_runner: any
+  build_runner: "1.3.5"
   model_widget_generator:
     path: ../model_widget_generator/
 
