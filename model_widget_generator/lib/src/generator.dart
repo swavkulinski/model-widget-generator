@@ -11,7 +11,6 @@ class ModelWidgetGenerator extends GeneratorForAnnotation<ModelWidget> {
   @override
   FutureOr<String> generateForAnnotatedElement(
       Element element, ConstantReader annotation, BuildStep buildStep) {
-    annotation.typeValue.resolveToBound(objectType)
     return _generateWidgetSource(element);
   }
 
