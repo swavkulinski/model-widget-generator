@@ -16,9 +16,11 @@ class UserWidget extends StatelessWidget {
   final String login;
   final bool writesDartCode;
   @override
-  Widget build(BuildContext context) => Column(children: <Widget>[
-        Text("name $name"),
-        Text("login $name"),
-        Text("writesDartCode $name"),
-      ]);
+  Widget build(BuildContext context) => Column(
+        children: <Widget>[
+          Text("name $name"),
+          Text("login $login"),
+          Text("writesDartCode $writesDartCode"),
+        ],
+      );
 }

@@ -11,35 +11,43 @@ class ModelWidgetGenerator extends GeneratorForAnnotation<ModelWidget> {
   @override
   FutureOr<String> generateForAnnotatedElement(
       Element element, ConstantReader annotation, BuildStep buildStep) {
+    annotation.typeValue.resolveToBound(objectType)
     return _generateWidgetSource(element);
   }
 
   String _generateWidgetSource(Element element) {
     final visitor = ModelVisitor();
     element.visitChildren(visitor);
+    final sourceBuilder = StringBuffer();
+    // Class name
+    sourceBuilder.writeln("class ${visitor.className}Widget extends StatelessWidget{");
 
-    String sourceBuilder = "class ${visitor.className}Widget extends StatelessWidget{\n";
+    // Constructor
+    sourceBuilder.write("${visitor.className}Widget (");
 
-    sourceBuilder += "${visitor.className}Widget (";
+    final parametersBuilder = StringBuffer();
+    for (String parameterName in visitor.fields.keys) {
+      parametersBuilder.write("this.$parameterName,"); 
+    }
+    sourceBuilder.write(parametersBuilder);
+    sourceBuilder.writeln(");");
+    for (String propertyName in visitor.fields.keys){
+      sourceBuilder.writeln("final ${visitor.fields[propertyName]} $propertyName;");
+    }
 
-    String parametersBuilder = "";
-    visitor.fields.forEach((name,type) => parametersBuilder += "this.$name,");
-    sourceBuilder += parametersBuilder;
-    sourceBuilder += ");\n";
+    sourceBuilder.writeln("@override");
+    sourceBuilder.writeln("Widget build(BuildContext context) => Column(");
+    sourceBuilder.writeln("children:<Widget>[");
+    final textWidgets = StringBuffer();
+    for(String propertyName in visitor.fields.keys) {
+      textWidgets.writeln("Text(\"$propertyName \$$propertyName\"),");
+    }
+    sourceBuilder.writeln(textWidgets);
+    sourceBuilder.writeln("],");
+    sourceBuilder.writeln(");");
+    sourceBuilder.writeln("}");
 
-    visitor.fields.forEach((name,type) => sourceBuilder += "final $type $name;");
-
-    sourceBuilder += "@override\n";
-    sourceBuilder += "Widget build(BuildContext context) => Column(\n";
-    sourceBuilder += "children:<Widget>[";
-    String textWidgets = "";
-    visitor.fields.forEach((name,type)=> textWidgets += "Text(\"$name \$$name\"),");
-    sourceBuilder += "$textWidgets\n";
-    sourceBuilder += "]";
-    sourceBuilder += ");\n";
-    sourceBuilder += "}\n";
-
-    return sourceBuilder;
+    return sourceBuilder.toString();
   }
 }
 

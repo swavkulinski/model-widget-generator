@@ -22,12 +22,14 @@ class EventWidget extends StatelessWidget {
   final double latitude;
   final String placeName;
   @override
-  Widget build(BuildContext context) => Column(children: <Widget>[
-        Text("name $name"),
-        Text("starts $name"),
-        Text("ends $name"),
-        Text("longitude $name"),
-        Text("latitude $name"),
-        Text("placeName $name"),
-      ]);
+  Widget build(BuildContext context) => Column(
+        children: <Widget>[
+          Text("name $name"),
+          Text("starts $starts"),
+          Text("ends $ends"),
+          Text("longitude $longitude"),
+          Text("latitude $latitude"),
+          Text("placeName $placeName"),
+        ],
+      );
 }
