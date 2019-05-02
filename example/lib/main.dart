@@ -1,5 +1,3 @@
-import 'package:example/model/event.dart';
-import 'package:example/model/user.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -31,7 +29,7 @@ class MyHomePage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            UserWidget("Swav", "swav", true),
+            /*UserWidget("Swav", "swav", true),
             UserWidget("Filip", "filip", true),
             EventWidget(
                 "Google I/O",
@@ -41,7 +39,7 @@ class MyHomePage extends StatelessWidget {
                 ),
                 37.426770,
                 -122.080765,
-                "Shoreline Amphitheatre"),
+                "Shoreline Amphitheatre"),*/
           ],
         ),
       ),
