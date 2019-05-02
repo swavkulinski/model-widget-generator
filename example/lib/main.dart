@@ -31,17 +31,17 @@ class MyHomePage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            UserWidget(
-              "Swav",
-              "swav",
-              true
-            ),
-            UserWidget(
-              "Filip",
-              "filip",
-              true
-            ),
-            EventWidget("Google I/O", DateTime.now().add(Duration(days: 1)), DateTime.now().add(Duration(days: 6),), 37.426770, -122.080765, "Shoreline Amphitheatre"),
+            UserWidget("Swav", "swav", true),
+            UserWidget("Filip", "filip", true),
+            EventWidget(
+                "Google I/O",
+                DateTime.now().add(Duration(days: 1)),
+                DateTime.now().add(
+                  Duration(days: 6),
+                ),
+                37.426770,
+                -122.080765,
+                "Shoreline Amphitheatre"),
           ],
         ),
       ),

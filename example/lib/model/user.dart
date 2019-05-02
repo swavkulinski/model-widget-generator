@@ -1,4 +1,4 @@
-import 'package:model_widget/model_widget.dart';
+import 'package:boring_widget/boring_widget.dart';
 import 'package:flutter/material.dart';
 
 part 'user.g.dart';

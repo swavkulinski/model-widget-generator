@@ -1,0 +1,15 @@
+targets:
+  $default:
+    builders:
+      boring_widget_generator|boring_widget:
+        enabled: true
+
+builders:
+  boring_widget:
+      target: ":boring_widget_generator"
+      import: "package:boring_widget_generator/builder.dart"
+      builder_factories: ["boringWidget"]
+      build_extensions: {".dart":[".boring_widget.g.part"]}
+      auto_apply: dependents
+      build_to: cache
+      applies_builders: ["source_gen|combining_builder"]

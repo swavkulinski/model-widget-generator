@@ -4,4 +4,4 @@ import 'package:source_gen/source_gen.dart';
 import 'src/generator.dart';
 
 
-Builder modelWidget(BuilderOptions options) => SharedPartBuilder([ModelWidgetGenerator()],'model_widget');
+Builder boringWidget(BuilderOptions options) => SharedPartBuilder([BoringWidgetGenerator()],'boring_widget');

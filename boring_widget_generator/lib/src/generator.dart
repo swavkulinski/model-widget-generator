@@ -4,10 +4,10 @@ import 'package:analyzer/dart/element/element.dart';
 import 'package:analyzer/dart/element/type.dart';
 import 'package:analyzer/dart/element/visitor.dart';
 import 'package:build/src/builder/build_step.dart';
-import 'package:model_widget/model_widget.dart';
+import 'package:boring_widget/boring_widget.dart';
 import 'package:source_gen/source_gen.dart';
 
-class ModelWidgetGenerator extends GeneratorForAnnotation<ModelWidget> {
+class BoringWidgetGenerator extends GeneratorForAnnotation<BoringWidget> {
   @override
   FutureOr<String> generateForAnnotatedElement(
       Element element, ConstantReader annotation, BuildStep buildStep) {
@@ -35,7 +35,7 @@ class ModelWidgetGenerator extends GeneratorForAnnotation<ModelWidget> {
     }
 
     sourceBuilder.writeln("@override");
-    sourceBuilder.writeln("Widget build(BuildContext context) => Column(");
+    sourceBuilder.writeln("Widget build(BuildContext context) => Padding( padding: EdgeInsets.all(12),child:Column(");
     sourceBuilder.writeln("children:<Widget>[");
     final textWidgets = StringBuffer();
     for(String propertyName in visitor.fields.keys) {
@@ -43,7 +43,7 @@ class ModelWidgetGenerator extends GeneratorForAnnotation<ModelWidget> {
     }
     sourceBuilder.writeln(textWidgets);
     sourceBuilder.writeln("],");
-    sourceBuilder.writeln(");");
+    sourceBuilder.writeln("),);");
     sourceBuilder.writeln("}");
 
     return sourceBuilder.toString();

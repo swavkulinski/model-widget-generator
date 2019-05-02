@@ -1,3 +1,3 @@
-library model_widget;
+library boring_widget;
 
 export 'src/annotation.dart';

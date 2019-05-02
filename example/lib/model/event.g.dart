@@ -3,7 +3,7 @@
 part of 'event.dart';
 
 // **************************************************************************
-// ModelWidgetGenerator
+// BoringWidgetGenerator
 // **************************************************************************
 
 class EventWidget extends StatelessWidget {
@@ -22,14 +22,17 @@ class EventWidget extends StatelessWidget {
   final double latitude;
   final String placeName;
   @override
-  Widget build(BuildContext context) => Column(
-        children: <Widget>[
-          Text("name $name"),
-          Text("starts $starts"),
-          Text("ends $ends"),
-          Text("longitude $longitude"),
-          Text("latitude $latitude"),
-          Text("placeName $placeName"),
-        ],
+  Widget build(BuildContext context) => Padding(
+        padding: EdgeInsets.all(12),
+        child: Column(
+          children: <Widget>[
+            Text("name $name"),
+            Text("starts $starts"),
+            Text("ends $ends"),
+            Text("longitude $longitude"),
+            Text("latitude $latitude"),
+            Text("placeName $placeName"),
+          ],
+        ),
       );
 }

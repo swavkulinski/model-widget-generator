@@ -29,6 +29,20 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.4"
+  boring_widget:
+    dependency: "direct main"
+    description:
+      path: "../boring_widget"
+      relative: true
+    source: path
+    version: "0.0.1"
+  boring_widget_generator:
+    dependency: "direct dev"
+    description:
+      path: "../boring_widget_generator"
+      relative: true
+    source: path
+    version: "0.0.1"
   build:
     dependency: transitive
     description:
@@ -263,20 +277,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.9.6+2"
-  model_widget:
-    dependency: "direct main"
-    description:
-      path: "../model_widget"
-      relative: true
-    source: path
-    version: "0.0.1"
-  model_widget_generator:
-    dependency: "direct dev"
-    description:
-      path: "../model_widget_generator"
-      relative: true
-    source: path
-    version: "0.0.1"
   package_config:
     dependency: transitive
     description:
@@ -386,7 +386,7 @@ packages:
       name: stream_transform
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.0.17"
+    version: "0.0.18"
   string_scanner:
     dependency: transitive
     description:

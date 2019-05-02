@@ -3,7 +3,7 @@
 part of 'user.dart';
 
 // **************************************************************************
-// ModelWidgetGenerator
+// BoringWidgetGenerator
 // **************************************************************************
 
 class UserWidget extends StatelessWidget {
@@ -16,11 +16,14 @@ class UserWidget extends StatelessWidget {
   final String login;
   final bool writesDartCode;
   @override
-  Widget build(BuildContext context) => Column(
-        children: <Widget>[
-          Text("name $name"),
-          Text("login $login"),
-          Text("writesDartCode $writesDartCode"),
-        ],
+  Widget build(BuildContext context) => Padding(
+        padding: EdgeInsets.all(12),
+        child: Column(
+          children: <Widget>[
+            Text("name $name"),
+            Text("login $login"),
+            Text("writesDartCode $writesDartCode"),
+          ],
+        ),
       );
 }
